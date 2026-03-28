@@ -13,7 +13,7 @@
     }
   },
   "scripts": {
-    "dev": "npx rslib build -w",
-    "build": "npx rslib build"
+    "dev": "npx rslib -w",
+    "build": "npx rslib"
   }
 }
