@@ -27,7 +27,7 @@ npm add rsbuild-plugin-publint -D
 Add plugin to your `rslib.config.ts` or `rsbuild.config.ts`:
 
 ```ts
-import { pluginPublint } from "rsbuild-plugin-publint";
+import { pluginPublint } from 'rsbuild-plugin-publint';
 
 export default {
   plugins: [pluginPublint()],
@@ -69,7 +69,7 @@ const defaultOptions = {
 ```js
 pluginPublint({
   publintOptions: {
-    level: "error",
+    level: 'error',
   },
 });
 ```
@@ -84,7 +84,7 @@ Specify when to throw an error based on message severity.
 
 ```ts
 pluginPublint({
-  throwOn: "warning",
+  throwOn: 'warning',
 });
 ```
 
