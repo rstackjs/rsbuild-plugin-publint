@@ -4,6 +4,9 @@
   "repository": "https://github.com/rstackjs/rsbuild-plugin-publint",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -27,7 +30,6 @@
     "pre-commit": "pnpm run lint:write"
   },
   "dependencies": {
-    "picocolors": "^1.1.1",
     "publint": "^0.3.21"
   },
   "devDependencies": {
