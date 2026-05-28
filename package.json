@@ -1,6 +1,6 @@
 {
   "name": "rsbuild-plugin-publint",
-  "version": "0.3.4",
+  "version": "1.0.0",
   "repository": "https://github.com/rstackjs/rsbuild-plugin-publint",
   "license": "MIT",
   "type": "module",
