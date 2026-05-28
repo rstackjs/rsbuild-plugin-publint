@@ -1,8 +1,22 @@
 import fs from 'node:fs/promises';
 import { join } from 'node:path';
+import { styleText } from 'node:util';
 import { type RsbuildPlugin, logger } from '@rsbuild/core';
-import color from 'picocolors';
 import type { Options } from 'publint';
+
+type MessageColor = 'red' | 'yellow' | 'cyan';
+
+const formatCountMessage = (
+  color: MessageColor,
+  count: number,
+  singular: string,
+  plural: string,
+) =>
+  [
+    styleText(color, 'Publint found '),
+    styleText([color, 'bold'], String(count)),
+    styleText(color, ` ${count === 1 ? singular : plural}:`),
+  ].join('');
 
 export type PluginPublintOptions = {
   /**
@@ -79,17 +93,13 @@ export const pluginPublint = (
           formatted.warnings.length === 0 &&
           formatted.suggestions.length === 0
         ) {
-          logger.info(color.green('Publint passed.'));
+          logger.info(styleText('green', 'Publint passed.'));
         }
 
         const errorsCount = formatted.errors.length;
         if (errorsCount > 0) {
           logger.error(
-            color.red(
-              `Publint found ${color.bold(errorsCount)} ${
-                errorsCount === 1 ? 'error' : 'errors'
-              }:`,
-            ),
+            formatCountMessage('red', errorsCount, 'error', 'errors'),
           );
           for (const message of formatted.errors) {
             if (message) {
@@ -103,11 +113,7 @@ export const pluginPublint = (
         const warningsCount = formatted.warnings.length;
         if (warningsCount > 0) {
           logger.warn(
-            color.yellow(
-              `Publint found ${color.bold(warningsCount)} ${
-                warningsCount === 1 ? 'warning' : 'warnings'
-              }:`,
-            ),
+            formatCountMessage('yellow', warningsCount, 'warning', 'warnings'),
           );
           for (const message of formatted.warnings) {
             if (message) {
@@ -121,10 +127,11 @@ export const pluginPublint = (
         const suggestionsCount = formatted.suggestions.length;
         if (suggestionsCount > 0) {
           logger.info(
-            color.cyan(
-              `Publint found ${color.bold(suggestionsCount)} ${
-                suggestionsCount === 1 ? 'suggestion' : 'suggestions'
-              }:`,
+            formatCountMessage(
+              'cyan',
+              suggestionsCount,
+              'suggestion',
+              'suggestions',
             ),
           );
           for (const message of formatted.suggestions) {
