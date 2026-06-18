@@ -2,6 +2,10 @@
   "name": "rsbuild-plugin-publint",
   "version": "1.0.0",
   "repository": "https://github.com/rstackjs/rsbuild-plugin-publint",
+  "homepage": "https://github.com/rstackjs/rsbuild-plugin-publint#readme",
+  "bugs": {
+    "url": "https://github.com/rstackjs/rsbuild-plugin-publint/issues"
+  },
   "license": "MIT",
   "type": "module",
   "engines": {
