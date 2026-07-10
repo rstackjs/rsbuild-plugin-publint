@@ -1,5 +1,5 @@
 import { stripVTControlCharacters as stripAnsi } from 'node:util';
-import { expect, test } from '@playwright/test';
+import { expect, test } from '@rstest/playwright';
 import { createRsbuild } from '@rsbuild/core';
 import { pluginPublint } from '../../src';
 import { proxyConsole } from '../helper';
