@@ -20,9 +20,10 @@ const allLogs = [
   'error   pkg.exports["."].types should be the first in the object as conditions are order-sensitive so it can be resolved by TypeScript.',
   'error   pkg.exports["."].import is ./dist/index.js but the file does not exist.',
   'error   pkg.exports["."].types is ./dist/index.d.ts but the file does not exist.',
-  'info    Publint found 2 suggestions:',
+  'info    Publint found 3 suggestions:',
   'info    The package does not specify the "type" field. Node.js may attempt to detect the package type causing a small performance hit. Consider adding "type": "commonjs".',
   `info    pkg.repository.url is git@github.com:test/test.git but could be a full git URL like "git+ssh://git@github.com/test/test.git".`,
+  'info    The package publishes internal tests or config files (/index.test.ts). You can use pkg.files to only publish certain files and save user bandwidth.',
 ];
 
 test('should run publint as expected', async () => {
