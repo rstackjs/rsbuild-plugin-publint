@@ -1,16 +1,13 @@
 {
   "name": "rsbuild-plugin-publint",
   "version": "1.0.0",
-  "repository": "https://github.com/rstackjs/rsbuild-plugin-publint",
   "homepage": "https://github.com/rstackjs/rsbuild-plugin-publint#readme",
   "bugs": {
     "url": "https://github.com/rstackjs/rsbuild-plugin-publint/issues"
   },
+  "repository": "https://github.com/rstackjs/rsbuild-plugin-publint",
   "license": "MIT",
   "type": "module",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -22,31 +19,25 @@
     "dist"
   ],
   "scripts": {
-    "build": "rslib",
-    "bump": "npx bumpp",
-    "dev": "rslib -w",
-    "lint": "rslint && prettier -c .",
-    "lint:write": "rslint --fix && prettier -w .",
-    "prepare": "simple-git-hooks",
-    "test": "rstest"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm run lint:write"
+    "build": "rs lib",
+    "bump": "pnpx bumpp",
+    "check": "rs check",
+    "dev": "rs lib -w",
+    "format": "rs fmt",
+    "lint": "rs lint",
+    "prepare": "rs hooks",
+    "test": "rs test"
   },
   "dependencies": {
     "publint": "^0.3.24"
   },
   "devDependencies": {
     "@rsbuild/core": "^2.2.2",
-    "@rslib/core": "^0.23.2",
-    "@rslint/core": "^0.9.0",
     "@rstackjs/test-utils": "^0.2.0",
-    "@rstest/core": "^0.11.11",
     "@rstest/playwright": "^0.11.11",
     "@types/node": "^24.13.3",
     "playwright": "^1.62.1",
-    "prettier": "^3.9.6",
-    "simple-git-hooks": "^2.14.0",
+    "rstack": "^0.7.2",
     "typescript": "7.0.2"
   },
   "peerDependencies": {
@@ -58,6 +49,9 @@
     }
   },
   "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

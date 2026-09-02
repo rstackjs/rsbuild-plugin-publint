@@ -1,7 +1,7 @@
 {
   "name": "playground",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:test/test.git"
@@ -13,7 +13,7 @@
     }
   },
   "scripts": {
-    "dev": "npx rslib -w",
-    "build": "npx rslib"
+    "build": "rs lib",
+    "dev": "rs lib -w"
   }
 }
