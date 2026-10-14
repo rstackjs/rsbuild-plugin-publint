@@ -29,15 +29,15 @@
     "test": "rs test"
   },
   "dependencies": {
-    "publint": "^0.3.24"
+    "publint": "^0.3.25"
   },
   "devDependencies": {
-    "@rsbuild/core": "^2.2.6",
+    "@rsbuild/core": "^2.2.13",
     "@rstackjs/test-utils": "^1.0.0",
-    "@rstest/playwright": "^0.11.12",
-    "@types/node": "^24.13.4",
-    "playwright": "^1.63.0",
-    "rstack": "^0.7.4",
+    "@rstest/playwright": "^0.12.3",
+    "@types/node": "^24.19.2",
+    "playwright": "^1.64.0",
+    "rstack": "^0.8.3",
     "typescript": "7.0.2"
   },
   "peerDependencies": {
@@ -48,7 +48,7 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@12.4.1",
+  "packageManager": "pnpm@12.11.2",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
